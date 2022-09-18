@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->foreignId('author');
+            $table->foreignId('author_id');
             $table->decimal('price', 11, 2);
             $table->text('excerpt');
             $table->longText('description');
