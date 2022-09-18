@@ -11,16 +11,16 @@
 </head>
 
 <body>
-    <article>
-        @foreach ($posts as $post)
-            <h1>{{ $post->title }}</h1>
-            <sub>Posted by: {{ $post->author }}</sub>
+    @foreach ($posts as $post)
+        <article>
+            <h1><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h1>
+            <sub>Posted by: <a href="/user/{{ $post->author->username }}">{{ $post->author->name }}</a></sub>
 
             <p>
-                {{ $post->description }}
+                {{ $post->excerpt }}
             </p>
-        @endforeach
-    </article>
+        </article>
+    @endforeach
 </body>
 
 </html>
